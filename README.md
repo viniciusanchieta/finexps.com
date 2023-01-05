@@ -118,7 +118,7 @@ $ yarn storybook
 $ npm run storybook
 ```
 
-Preview of emails with (React Email)[https://react.email/]:
+Preview of emails with [React Email](https://react.email/):
 
 ```bash
 $ yarn start:email
