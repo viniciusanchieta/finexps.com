@@ -1953,10 +1953,52 @@
   dependencies:
     react "18.2.0"
 
+"@react-email/container@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@react-email/container/-/container-0.0.5.tgz#7fe0f93cef208198ae3a4d42e3ccdb133702d126"
+  integrity sha512-zEPBl81MlOZXHYYpexyUCyQogtT6II2PmAJ8Y7hQ8xmNvdiPKdcIneCGqtYLYbBPATP9pGs4JNdL0SOG1BIqvw==
+  dependencies:
+    react "18.2.0"
+
+"@react-email/head@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@react-email/head/-/head-0.0.3.tgz#0ebbcc278c06a247d2d6873bf1f4e95a98a09969"
+  integrity sha512-4V5GkOCp6MhuTSxqADtfl7zx6Ku6/fDR32DCV6XDRhBhr5TRwiPV/aOAf2eIWzOwLcLkrTMd4O0BPf97+uBaCA==
+  dependencies:
+    react "18.2.0"
+
+"@react-email/hr@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@react-email/hr/-/hr-0.0.3.tgz#275b378d859e66336708f3399d029526e1d545da"
+  integrity sha512-dTV1jm8q5BBzdjNnAAq8RRInxg7Q0V+9dk+v5zutAYcd85UtkFa6YpS7h8ElhIRUiWCtpy/Bze1V9PiDFQko5Q==
+  dependencies:
+    react "18.2.0"
+
 "@react-email/html@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@react-email/html/-/html-0.0.3.tgz#05581193ce8acd68a03739ba9101fade601feba2"
   integrity sha512-NtHzGq38StO95W/rASYy+qdzFEpqUDmEe5RMygxeaV/TTZbtLLRqycwk5B/dxq4DfreZE/GL0vAg6u6sMVLTPA==
+
+"@react-email/img@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@react-email/img/-/img-0.0.3.tgz#f77155ce3f406e6dc76c91d01663b60051fed0cd"
+  integrity sha512-RHO7SpRwNo7+Z2h+RtNP0r4ofKYEwvPnKtCHYL4oIRPu3mEto3JAb4g3tVH3pjiHzY1aqSZUXmbCtZtoqdlCwQ==
+  dependencies:
+    react "18.2.0"
+
+"@react-email/link@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@react-email/link/-/link-0.0.3.tgz#25577b0974a36c80c63a0e793aa3b364f8985b6f"
+  integrity sha512-ybkITKwNmFAdBYYtxsD5KxQKUhW8ICQmLW29DYi6yS1GUECA2v78noSnZMaTwNP01rOx0I1dqSgn20M/justdg==
+  dependencies:
+    react "18.2.0"
+
+"@react-email/preview@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@react-email/preview/-/preview-0.0.3.tgz#3cd0567e8f20678eaecd8bc117d3e6c040e9204a"
+  integrity sha512-vEayk64Sa1m1PhaBte8ovIgbTOG5BHoYMmXsltcFoerPz1ZMY7MJwEGEbhiSh/PGt5CXFOsZEIKZuKIu69lUzQ==
+  dependencies:
+    react "18.2.0"
 
 "@react-email/render@0.0.3":
   version "0.0.3"
@@ -1965,6 +2007,20 @@
   dependencies:
     pretty "2.0.0"
     react-dom "18.2.0"
+
+"@react-email/section@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@react-email/section/-/section-0.0.4.tgz#f3b8d56dd76ed90c06cd01062a8395236b6f3952"
+  integrity sha512-AaDejYo9nozfiGMxjGnR+CaC8jnILIowiqPFRVeEQOywS2LrL8iIB4YhrxvFjeaWgZmWqKdYDhq16uXWpi/eEA==
+  dependencies:
+    react "18.2.0"
+
+"@react-email/text@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@react-email/text/-/text-0.0.3.tgz#465a2d139e56a52042de1413ad6aa8ee2996f0df"
+  integrity sha512-gDPeps1TKqTuvTGVCmjDziAhzdctrj8NvmUCwIsKRBRzGqKcjXJaSx/wVs4aAHO6erVpuswmkUsdo2d238YN/Q==
+  dependencies:
+    react "18.2.0"
 
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
@@ -10393,6 +10449,11 @@ node-releases@^2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.6.tgz"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
+
+nodemailer@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.8.0.tgz#804bcc5256ee5523bc914506ee59f8de8f0b1cd5"
+  integrity sha512-EjYvSmHzekz6VNkNd12aUqAco+bOkRe3Of5jVhltqKhEsjw/y0PYPJfp83+s9Wzh1dspYAkUW/YNQ350NATbSQ==
 
 nopt@^6.0.0:
   version "6.0.0"

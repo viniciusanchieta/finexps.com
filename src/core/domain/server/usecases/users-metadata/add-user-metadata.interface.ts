@@ -1,4 +1,5 @@
-import { UserMetadataCategoryEnum } from './add.user-metadata.enum';
+import { HttpStatusCodeEnum } from '~/core/app/server/protocols';
+import { UserMetadataCategoryEnum } from './add-user-metadata.enum';
 
 export interface AddUserMetadata {
   run: (params: AddUserMetadata.Params) => Promise<AddUserMetadata.Response>;
@@ -13,6 +14,7 @@ export namespace AddUserMetadata {
   };
 
   export type Response = {
-    code: number;
+    statusCode: HttpStatusCodeEnum;
+    code?: string;
   };
 }

@@ -12,17 +12,26 @@
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook",
     "update-deps": "ncu -u && yarn install",
-    "start:email": "email dev"
+    "start:email": "./.scripts/migrate-emails.sh && email dev"
   },
   "dependencies": {
     "@next/font": "^13.1.1",
     "@prisma/client": "4.8.0",
     "@react-email/button": "0.0.5",
+    "@react-email/container": "^0.0.5",
+    "@react-email/head": "^0.0.3",
+    "@react-email/hr": "^0.0.3",
     "@react-email/html": "0.0.3",
+    "@react-email/img": "^0.0.3",
+    "@react-email/link": "^0.0.3",
+    "@react-email/preview": "^0.0.3",
+    "@react-email/section": "^0.0.4",
+    "@react-email/text": "^0.0.3",
     "bcryptjs": "^2.4.3",
     "husky": "^8.0.2",
     "jsonwebtoken": "^9.0.0",
     "next": "latest",
+    "nodemailer": "^6.8.0",
     "react-dom": "^18.2.0",
     "react-email": "1.6.0"
   },

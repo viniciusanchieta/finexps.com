@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { HttpStatusCodeEnum } from '~/core/app/server/protocols/http';
-import { AddUserMetadata } from '~/core/domain/server/usecases';
+import { HttpStatusCodeEnum } from '~/core/app/server/protocols';
+import { AddUserMetadata } from '~/core/domain/server';
 
 export class RemoteAddUserMetadata implements AddUserMetadata {
   constructor(private readonly prismaClient: PrismaClient) {}
@@ -8,7 +8,7 @@ export class RemoteAddUserMetadata implements AddUserMetadata {
   async run(params: AddUserMetadata.Params): Promise<AddUserMetadata.Response> {
     const { userId, code, category, expiresAt } = params;
 
-    await this.prismaClient.userMetadata.create({
+    const registerUserMetadata = await this.prismaClient.userMetadata.create({
       data: {
         code,
         category,
@@ -22,7 +22,8 @@ export class RemoteAddUserMetadata implements AddUserMetadata {
     });
 
     return {
-      code: HttpStatusCodeEnum.CREATED
+      statusCode: HttpStatusCodeEnum.CREATED,
+      code: registerUserMetadata.code
     };
   }
 }

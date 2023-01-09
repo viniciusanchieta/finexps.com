@@ -77,6 +77,13 @@ Duplicate the `.env.example` file and rename it to `.env` and fill in the variab
 | ------------ | ------------ | --------------------------------------------------- |
 | DATABASE_URL | Database URL | postgres://postgres:postgres@localhost:5432/finexps |
 | JWT_SECRET   | Secret key   | 123456                                              |
+| BASE_URL     | Base URL     | http://localhost:3000                               |
+| EMAIL_HOST   | Host of email | smtp.mailtrap.io                                   |
+| EMAIL_PORT   | Port of email | 2525                                               |
+| EMAIL_USER   | User of email | 123456                                             |
+| EMAIL_PASS   | Pass of email | 123456                                             |
+| EMAIL_FROM   | From of email | noreply@test.com                                   |
+
 
 Follow the steps below:
 
@@ -120,10 +127,18 @@ $ yarn storybook
 $ npm run storybook
 ```
 
-Preview of emails with (React Email)[https://react.email/]:
+Preview of emails with [React Email](https://react.email/):
+<!-- add permission for .sh file -->
+
+Before running the command, you need to give permission to the file `.scripts/migrate-emails.sh`:
+
+```bash
+$ chmod +x .scripts/migrate-emails.sh
+```
 
 ```bash
 $ yarn start:email
+```bash
 # or
 $ npm run start:email
 ```
