@@ -31,6 +31,8 @@ This project is a simple expenses manager, where you can add, edit and delete ex
   - [ ] Route of login
   - [ ] Route of authentication
   - [ ] Route of account postings
+- [ ] Create the email's template
+  - [ ] Template activate account
 - [ ] Deploy the project (beta version) on Vercel
 
 ## Structure
