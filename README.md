@@ -145,7 +145,7 @@ $ npm run start:email
 
 ## Contributors
 
-[![](https://contrib.rocks/image?repo=viniciusanchieta/generate-component-and-style)](https://github.com/viniciusanchieta/generate-component-and-style/graphs/contributors)
+[![](https://contrib.rocks/image?repo=viniciusanchieta/finexps.com)](https://github.com/viniciusanchieta/finexps.com/graphs/contributors)
 
 ## License
 
