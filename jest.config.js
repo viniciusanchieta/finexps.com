@@ -22,7 +22,9 @@ const customJestConfig = {
     '!src/**/page.{ts,tsx}',
     '!src/**/layout.{ts,tsx}',
     '!src/**/*.stories.{ts,tsx}',
-    '!src/**/env.{ts,tsx}'
+    '!src/**/*-email.{ts,tsx}',
+    '!src/**/env.{ts,tsx}',
+    '!src/**/infra/**/*.{ts,tsx}',
   ]
 };
 
