@@ -1,4 +1,4 @@
-import { UserMetadataCategoryEnum } from '~/core/domain/server/usecases';
+import { UserMetadataCategoryEnum } from '~/core/domain/server';
 import { RemoteAddUserMetadata } from './remote-add-user-metadata';
 
 const defaultParams = {
@@ -46,7 +46,8 @@ describe('Remote add user metadata', () => {
     const { sut } = makeSut();
     const response = await sut.run(defaultParams);
     expect(response).toEqual({
-      code: 201
+      statusCode: 201,
+      code: 'TEST'
     });
   });
 });

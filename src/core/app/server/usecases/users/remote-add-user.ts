@@ -1,16 +1,15 @@
 import { PrismaClient } from '@prisma/client';
 import jwt from 'jsonwebtoken';
-import { HttpStatusCodeEnum } from '~/core/app/server/protocols/http';
-import { RemoteAddUserMetadata } from '~/core/app/server/usecases/user-metadata';
-import {
-  AddUser,
-  UserMetadataCategoryEnum
-} from '~/core/domain/server/usecases';
-import { PasswordUtil } from '~/core/infra';
-import { JWT_SECRET } from '~/core/infra/config/env';
+import { HttpStatusCodeEnum } from '~/core/app/server/protocols';
+import { RemoteAddUserMetadata } from '~/core/app/server/usecases';
+import { AddUser, UserMetadataCategoryEnum } from '~/core/domain/server';
+import { JWT_SECRET, PasswordUtil } from '~/core/infra';
 
 export class RemoteAddUser implements AddUser {
-  constructor(private readonly prismaClient: PrismaClient) {}
+  constructor(
+    private readonly prismaClient: PrismaClient,
+    private readonly remoteAddUserMetadata: RemoteAddUserMetadata
+  ) {}
 
   async run(params: AddUser.Params): Promise<AddUser.Response> {
     const { email, name, password } = params;
@@ -18,7 +17,7 @@ export class RemoteAddUser implements AddUser {
       password,
       salt: 10
     });
-    const userRegistered = await this.prismaClient.user.create({
+    const userRegister = await this.prismaClient.user.create({
       data: {
         email,
         name,
@@ -26,19 +25,19 @@ export class RemoteAddUser implements AddUser {
       }
     });
 
-    if (!userRegistered) {
-      return { code: HttpStatusCodeEnum.BAD_REQUEST };
+    if (!userRegister) {
+      return { statusCode: HttpStatusCodeEnum.BAD_REQUEST };
     }
-    const { id } = userRegistered;
+
+    const { id } = userRegister;
     const tokenActivateAccount = jwt.sign({ id }, JWT_SECRET, {
       expiresIn: '30m'
     });
     const dateNowWith30Minutes = new Date().setMinutes(
       new Date().getMinutes() + 30
     );
-    const remoteAddUserMetadata = new RemoteAddUserMetadata(this.prismaClient);
 
-    await remoteAddUserMetadata.run({
+    const { code } = await this.remoteAddUserMetadata.run({
       category: UserMetadataCategoryEnum.ACTIVATE_ACCOUNT,
       code: tokenActivateAccount,
       expiresAt: new Date(dateNowWith30Minutes),
@@ -46,7 +45,8 @@ export class RemoteAddUser implements AddUser {
     });
 
     return {
-      code: HttpStatusCodeEnum.CREATED
+      statusCode: HttpStatusCodeEnum.CREATED,
+      activationCode: code
     };
   }
 }

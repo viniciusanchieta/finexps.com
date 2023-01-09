@@ -1,3 +1,5 @@
+import { HttpStatusCodeEnum } from '~/core/app/server';
+
 export interface AddUser {
   run: (params: AddUser.Params) => Promise<AddUser.Response>;
 }
@@ -10,6 +12,7 @@ export namespace AddUser {
   };
 
   export type Response = {
-    code: number;
+    statusCode: HttpStatusCodeEnum;
+    activationCode?: string;
   };
 }

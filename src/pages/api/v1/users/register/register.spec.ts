@@ -30,15 +30,53 @@ jest.mock('@prisma/client', () => {
   };
 });
 
-jest.mock('~/core/app/server/usecases/user-metadata', () => {
+jest.mock('~/core/app/server/usecases', () => {
   return {
     RemoteAddUserMetadata: jest.fn(() => {
       return {
         run: jest.fn(() => {
           return {
-            code: 201
+            statusCode: 201
           };
         })
+      };
+    }),
+    RemoteSendEmail: jest.fn(() => {
+      return {
+        run: jest.fn(() => {
+          return {
+            statusCode: 201
+          };
+        })
+      };
+    }),
+    RemoteAddUser: jest.fn(() => {
+      return {
+        run: jest.fn(() => {
+          return {
+            statusCode: 201
+          };
+        })
+      };
+    })
+  };
+});
+
+jest.mock('@react-email/render', () => {
+  return {
+    render: jest.fn(() => {
+      return {
+        html: '<h1>test</h1>'
+      };
+    })
+  };
+});
+
+jest.mock('~/core/infra', () => {
+  return {
+    apiLogger: jest.fn(() => {
+      return {
+        error: 'test'
       };
     })
   };

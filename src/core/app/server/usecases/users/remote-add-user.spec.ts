@@ -29,13 +29,13 @@ jest.mock('@prisma/client', () => {
   };
 });
 
-jest.mock('~/core/app/server/usecases/user-metadata', () => {
+jest.mock('~/core/app/server/usecases', () => {
   return {
     RemoteAddUserMetadata: jest.fn(() => {
       return {
         run: jest.fn(() => {
           return {
-            code: 201
+            codeStatus: 201
           };
         })
       };
@@ -43,14 +43,28 @@ jest.mock('~/core/app/server/usecases/user-metadata', () => {
   };
 });
 
+jest.mock('~/core/app/server/protocols', () => {
+  return {
+    HttpStatusCodeEnum: {
+      CREATED: 201,
+      BAD_REQUEST: 400
+    }
+  };
+});
+
 const PrismaClient = jest.requireMock('@prisma/client').PrismaClient;
+const RemoteAddUserMetadata = jest.requireMock(
+  '~/core/app/server/usecases'
+).RemoteAddUserMetadata;
 
 const makeSut = () => {
   const prismaClient = new PrismaClient();
-  const sut = new RemoteAddUser(prismaClient);
+  const remoteAddUserMetadata = new RemoteAddUserMetadata();
+  const sut = new RemoteAddUser(prismaClient, remoteAddUserMetadata);
   return {
     sut,
-    prismaClient
+    prismaClient,
+    remoteAddUserMetadata
   };
 };
 
@@ -58,7 +72,7 @@ describe('Remote add user', () => {
   it('should create a user', async () => {
     const { sut } = makeSut();
     const response = await sut.run(defaultParams);
-    expect(response.code).toBe(201);
+    expect(response.statusCode).toBe(201);
   });
 
   it('should return empty object if user already exists', async () => {
@@ -67,6 +81,6 @@ describe('Remote add user', () => {
       return null;
     });
     const response = await sut.run(defaultParams);
-    expect(response.code).toBe(400);
+    expect(response.statusCode).toBe(400);
   });
 });
