@@ -138,7 +138,6 @@ $ chmod +x .scripts/migrate-emails.sh
 
 ```bash
 $ yarn start:email
-```bash
 # or
 $ npm run start:email
 ```
