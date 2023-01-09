@@ -1,4 +1,4 @@
-import { HttpStatusCodeEnum } from '~/core/app/server';
+import { HttpStatusCodeEnum } from '~/core/app/server/protocols';
 
 export interface AddUser {
   run: (params: AddUser.Params) => Promise<AddUser.Response>;

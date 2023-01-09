@@ -1,4 +1,4 @@
-import { HttpStatusCodeEnum } from '~/core/app/server';
+import { HttpStatusCodeEnum } from '~/core/app/server/protocols';
 
 export interface SendEmail {
   run: (params: SendEmail.Params) => Promise<SendEmail.Response>;

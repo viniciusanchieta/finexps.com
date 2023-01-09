@@ -1,4 +1,4 @@
-import { HttpStatusCodeEnum } from '~/core/app/server';
+import { HttpStatusCodeEnum } from '~/core/app/server/protocols';
 import { UserMetadataCategoryEnum } from './add-user-metadata.enum';
 
 export interface AddUserMetadata {
