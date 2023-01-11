@@ -23,6 +23,7 @@ module.exports = {
       '10px': '0.625rem',
       '16px': '1rem',
       '21px': '1.3125rem',
+      '38px': '2.375rem',
       '40px': '2.5rem',
       '50px': '3.125rem',
       '54px': '3.375rem',
@@ -45,6 +46,10 @@ module.exports = {
       '40px': '2.5rem',
       '50px': '3.125rem',
       '54px': '3.375rem',
+      '105px': '6.5625rem',
+      '108px': '6.75rem',
+      '133px': '8.3125rem',
+      '149px': '9.3125rem',
       '216px': '13.5rem',
       '280px': '17.5rem',
       '352px': '22rem',
@@ -54,6 +59,9 @@ module.exports = {
       '211px': '13.1875rem',
       '340px': '21.25rem',
       '400px': '25rem',
+      '453px': '28.3125rem',
+      '629px': '39.3125rem',
+      '1440px': '90rem',
       'full-percent': '100%',
       'full-vw': '100vw',
       'half-percent': '50%'
@@ -65,9 +73,12 @@ module.exports = {
       '159px': '9.9375rem'
     },
     colors: {
+      transparent: 'transparent',
+      black: '#000000',
       greenDark: '#015F43',
       greenLight: '#00B37E',
       green: '#00875F',
+      green1: '#0DAE7F',
       redDark: '#AA2834',
       red: '#F75A68',
       gray: '#8D8D99',
@@ -78,28 +89,38 @@ module.exports = {
       gray5: '#7C7C8A',
       gray6: '#C4C4CC',
       gray7: '#E1E1E6',
+      gray8: '#A7A7A7',
+      gray9: '#8E8C8C',
       white: '#FFFFFF',
-      blue: '#3391FF'
+      white1: '#FDFDFD',
+      blue: '#3391FF',
+      blueMedium: '#00A2AD'
     },
     fontFamily: {
       roboto: ['Roboto', 'sans-serif']
     },
     fontWeight: {
       regular: 300,
+      semiBold: 500,
       medium: 400,
       bold: 700
     },
     lineHeight: {
-      normal: 1.6
+      '70px': '4.375rem'
     },
     fontSize: {
+      '10px': '0.625rem',
       '14px': '0.875rem',
       '16px': '1rem',
       '20px': '1.25rem',
+      '21px': '1.3125rem',
       '24px': '1.5rem',
-      '32px': '2rem'
+      '32px': '2rem',
+      '60px': '3.75rem'
     },
     padding: {
+      '2px': '0.125rem',
+      '4px': '0.25rem',
       '8px': '0.5rem',
       '12px': '0.75rem',
       '16px': '1rem',
@@ -107,8 +128,10 @@ module.exports = {
       '24px': '1.5rem',
       '29px': '1.8125rem',
       '32px': '2rem',
+      '36px': '2.25rem',
       '40px': '2.5rem',
       '48px': '3rem',
+      '90px': '5.625rem',
       '112px': '7rem',
       '160px': '10rem',
       '192px': '12rem'
@@ -118,6 +141,7 @@ module.exports = {
       '8px': '0.5rem',
       '12px': '0.75rem',
       '16px': '1rem',
+      '17px': '1.0625rem',
       '20px': '1.25rem',
       '24px': '1.5rem',
       '30px': '1.875rem',
