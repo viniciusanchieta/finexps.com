@@ -1,11 +1,11 @@
 const isEnvVariable = (variable: string): string => {
-  const hasVariable = process.env[variable];
+  const hasVariable = process.env.hasOwnProperty(variable);
 
   if (!hasVariable) {
-    throw new Error(`Variable ${variable} not found in .env file`);
+    return '';
   }
 
-  return hasVariable;
+  return process.env[variable] as string;
 };
 
 export const JWT_SECRET = isEnvVariable('JWT_SECRET');
