@@ -26,6 +26,7 @@ This project is a simple expenses manager, where you can add, edit and delete ex
   - [x] Page account postings
   - [x] Page login
   - [x] Page register
+  - [ ] Page home
 - [ ] Create the routes
   - [x] Route of register
   - [ ] Route of login
